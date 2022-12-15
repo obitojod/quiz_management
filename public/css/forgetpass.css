@@ -1,0 +1,132 @@
+forgetpass.css * {
+    margin: 0;
+    padding: 0;
+    font-family: sans-seriff;
+}
+
+.hello {
+    height: 100%;
+    width: 100%;
+    color: #FF5733;
+    background-image: url('/images/bcgd.jpg');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.formbox {
+    width: 370px;
+    height: 400px;
+    position: relative;
+    margin: 8% auto;
+    background: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.buttonbox {
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 10px #ff61241f;
+    border-radius: 30px;
+}
+
+.head {
+    padding-top: 40px;
+    font-size: 20px;
+}
+
+
+/* .toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+} */
+
+.getotp {
+    font-size: 15px;
+    color: #f73475;
+    padding: 5px 19px;
+    cursor: pointer;
+    display: block;
+    margin-top: 13px;
+    margin-left: 90px;
+    margin-right: 3px;
+    /* background:linear-gradient(to right, #f73475, #f6b533); */
+    border-color: #f73475;
+    outline: none;
+    border-radius: 15px;
+}
+
+.getotp:hover {
+    background: linear-gradient(to right, #f90355, #fda900);
+    transition: .4s;
+    color: white;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    color: #fff;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.input-group {
+    top: 135px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+.input_field {
+    font-size: 15px;
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1 px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.verify {
+    font-size: 15px;
+    color: #f73475;
+    padding: 5px 19px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 13px;
+    margin-left: 85px;
+    margin-right: 3px;
+    /* background: linear-gradient(to right, #f73475, #f6b533); */
+    border-color: #f73475;
+    outline: none;
+    border-radius: 15px;
+}
+
+.verify:hover {
+    background: linear-gradient(to right, #f90355, #fda900);
+    transition: .4s;
+    color: white;
+}
+
+#login {
+    left: 50px;
+}
+
+#register {
+    left: 450px;
+}

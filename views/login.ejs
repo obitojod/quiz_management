@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>login quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="hello">
+        <div class="formbox">
+            <div class="buttonbox">
+                <div id="btn"></div>
+
+                <button type="button" class="toggle-btn" onclick="login() ">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register() ">Register</button>
+
+
+            </div>
+            <form id="login" class=" input-group" action="/login" method="POST">
+                <input type="email" class="input_field" name="email" placeholder="Enter Email Id" required>
+                <input type="password" name="password" class="input_field" placeholder="Enter Password" required>
+                <a style="text-decoration: none;" href="/forget">
+
+                    <h4>Forgot password ?</h4>
+                </a>
+                <button type="submit " class="submit-btn ">Log In</button>
+            </form>
+            <form id="register" class="input-group" action="/register" method="POST">
+                <input type="email" class="input_field " name="email" placeholder="Enter Email Id" required>
+                <input type="phone " class="input_field " name="phone" placeholder="Enter Phone No" required>
+                <input type="password" class="input_field " name="password" placeholder="Enter Password" required>
+                <br><br><br>
+                <button type="submit " class="submit-btn ">Register</button>
+            </form>
+        </div>
+
+
+
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+            function register() {
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+                z.style.color = "white";
+            }
+
+            function login() {
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0";
+                z.style.color = "white";
+            }
+        </script>
+
+</body>
+
+</html>

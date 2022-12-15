@@ -1,0 +1,108 @@
+student.css * {
+    margin: 0;
+    padding: 0;
+    font-family: sans-seriff;
+}
+
+.main-div {
+    height: 100%;
+    width: 100%;
+    background-image: url('/images/bcgd.jpg');
+    ;
+    /* background : radial-gradient( #e0c159e9, #d6510a); */
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.division {
+    display: flex;
+    /* justify-content:center; */
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.select1 {
+    padding: 15px;
+    margin-top: 5%;
+    font-size: 1.5em;
+}
+
+.select2 {
+    padding: 15px;
+    margin-top: 5%;
+    font-size: 1.5em;
+}
+
+.inner1-div {
+    /* display: flex;
+    justify-content: left; */
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 4% 27%;
+    background: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.inner2-div {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    margin: 4% 53%;
+    background: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+#button1 {
+    padding: 15px 30px;
+    font-size: 20px;
+    border-color: rgb(255, 255, 255);
+    color: black;
+    background-color: rgb(252, 212, 138);
+    margin-top: 5%;
+    width: 70%;
+    border-radius: 15px;
+}
+
+#button1:hover {
+    background: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+    transition: .2s;
+    color: rgb(0, 0, 0);
+}
+
+#button2 {
+    padding: 15px 30px;
+    font-size: 20px;
+    border-color: white;
+    color: black;
+    background-color: rgb(252, 212, 138);
+    margin-top: 5%;
+    width: 70%;
+    border-radius: 15px;
+}
+
+#button2:hover {
+    background: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+    transition: .2s;
+    color: rgb(0, 0, 2);
+}
+
+#box {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    height: 5%;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+img {
+    width: 30%;
+    height: 30%;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/forgetpass.css">
+
+    <body>
+        <div class="hello">
+            <div class="formbox">
+                <div class="head">
+                    <center>
+                        <h3>Forgot Password</h3>
+                    </center>
+                    <!-- <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+     -->
+                    <br><br>
+
+                </div>
+                <form id="login" class=" input-group ">
+
+                    <input type="text " class="input_field " placeholder="Email Id " required>
+                    <br><br><br>
+                    <button type="button" class="getotp">Submit</button>
+                    <!-- <input type="text " class="input_field " placeholder="Enter OTP " required>
+                    <a href="">
+                        <h4 style="color: red;">Forgot password ?</h4>
+                    </a>
+                    <button type="submit " class="verify">Verify OTP</button> -->
+
+                </form>
+                <!-- <form id="register" class="input-group ">
+                    <input type="text " class="input_field " placeholder="Enter Email Id " required>
+                    <input type="email " class="input_field " placeholder="Enter Phone No. " required>
+                    <input type="text " class="input_field " placeholder="Enter Password! " required>
+                    <br><br><br>
+                    <button type="submit " class="submit-btn ">Register</button>
+                </form> -->
+            </div>
+
+            <script>
+                var x = document.getElementById("login");
+                var y = document.getElementById("register");
+                var z = document.getElementById("btn");
+
+                function register() {
+                    x.style.left = "-400px";
+                    y.style.left = "50px";
+                    z.style.left = "110px";
+                }
+
+                function login() {
+                    x.style.left = "50px";
+                    y.style.left = "450px";
+                    z.style.left = "0";
+                }
+            </script>
+
+    </body>
+
+</html>

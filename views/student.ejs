@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onlinequiz</title>
+    <link rel="stylesheet" href="css/student.css">
+    <!-- <link rel="stylesheet" href="navbar.css"> -->
+</head>
+
+<body>
+    <div class="main-div">
+        <%- include('header');%>
+
+            <center>
+                <h2 id="box">Welcome
+                    <%= user %> !!
+                </h2>
+            </center>
+            <section class="division">
+
+                <div class="inner1-div">
+                    <center>
+                        <h2 class="select1">ATTEMPT QUIZ</h2>
+                    </center>
+
+                    <center> <img src="/images/questions.png" alt="questions.png"></center>
+                    <a href="/attemptquiz">
+                        <center><button id="button1">START</button>
+                    </a>
+                    </center>
+                </div>
+                <div class="inner2-div">
+                    <center>
+                        <h2 class="select2">QUIZ RESULTS</h2>
+                    </center>
+
+                    <center> <img src="/images/results.png" alt="questions.png"></center>
+                    <a href="/viewresult.html">
+                        <center><button id="button2">START</button>
+                    </a>
+                    </center>
+                </div>
+    </div>
+    </section>
+    </div>
+</body>
+
+</html>

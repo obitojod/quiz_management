@@ -1,0 +1,57 @@
+            .navbar {
+                background-color: transparent;
+                /* border-radius: 30px; */
+                /* position: top; */
+            }
+            
+            .navbar ul {
+                overflow: auto;
+            }
+            
+            .navbar li {
+                float: left;
+                list-style: none;
+                padding: 1px 7px;
+                margin: 30px 15px;
+            }
+            
+            .navbar li a {
+                /* padding: 7px 7px 7px 7px; */
+                font-size: 1.2em;
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+            }
+            
+            .navbar li a:hover {
+                color: rgb(255, 255, 255);
+                background-color: rgb(7, 39, 56);
+                padding: 10px 17px;
+                border-radius: 15px;
+            }
+            /* .profile {
+                float: right;
+                list-style: none;
+                padding: 7px 7px;
+                margin: 20px 15px;
+            }
+            
+            .profile a {
+                font-size: 1.5em;
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+            }
+            
+            .profile a:hover {
+                color: rgb(255, 255, 255);
+                background-color: rgb(15, 115, 169);
+                padding: 10px 17px;
+                border-radius: 15px;
+            }
+            
+            .navbar input {
+                border: 4px whitesmoke;
+                padding: 2px 17px;
+                border-radius: 10px;
+                width: 136px;
+                margin: 2px;
+            } */
