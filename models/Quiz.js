@@ -6,10 +6,21 @@ const quizSchema = new mongoose.Schema({
     },
     options: [{
         question: String,
+        questionId: String,
         answer: [String],
-        correct_answer: String
-    }]
+        correct_answer: String,
+        isAnswerCorrect: Boolean
+    }],
+    user: {
+        userId: String,
+        isCompleted: Boolean
+    },
+    quizId: {
+        type: String,
+        required: true
+    }
 });
+
 const Quiz = mongoose.model('Quiz', quizSchema);
 
 module.exports = Quiz;

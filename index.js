@@ -7,8 +7,9 @@ const User = require('./models/User');
 const Quiz = require('./models/Quiz');
 const session = require('express-session')
 const cookieParser = require('cookie-parser');
+const { v4: uuidv4 } = require('uuid');
 
-mongoose.connect("mongodb://127.0.0.1:27017/test_project");
+mongoose.connect("mongodb+srv://akshay:injoker123@testcluster.vsdenle.mongodb.net/?retryWrites=true&w=majority");
 
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }));
@@ -64,6 +65,7 @@ app.post('/login', (req, res) => {
                 if (result) {
                     req.session.email = userData.email;
                     req.session.isAdmin = userData.isAdmin;
+                    req.session.userId = userData._id;
                     res.redirect('student');
                 } else {
                     res.send('Invalid email/password');
@@ -101,16 +103,58 @@ app.get('/attemptquiz', (req, res) => {
     if (req.session.email) {
         const email = req.session.email;
         Quiz.find({}, (err, result) => {
-            console.log(result);
-            console.log(result[0]);
-            // for (var i = 0; i < 2; i++) {
-            //     console.log(`${result[i]}`);
-            // }
+            if(result) {
+                // for (var i = 0; i < 2; i++) {
+                //     console.log(`${result[i]}`);
+                // }
+                console.log(result);
+                res.render('attemptquiz', { data: result });
+            }
         })
-        res.render('attemptquiz', { user: email });
     } else {
         res.redirect('/login');
     }
+})
+
+// get specific quiz
+app.get('/quiz/:quizId', (req,res) => {
+    if (req.session.email) {
+        const quizId = req.params.quizId;
+        Quiz.find({quizId}, (err,result) => {
+            console.log(result);
+        })
+        res.send("Wow")
+    } else {
+        res.redirect('/login');
+    }
+})
+
+app.post('/quiz/:quizId', async (req,res) => {
+    // if (req.session.email) {
+        const quizId = req.params.quizId;
+        const userId = req.session.userId;
+        const data = req.body;
+        console.log(data);
+        for (var i=0; i < data.length; i++) {
+            const ans = data[i].user_answer;
+            const quesId = data[i].questionId;
+            // Quiz.find({quizId: quizId}, (err,result) => {
+            //     const questions = result[0].options;
+            //     console.log(i);
+            //     console.log(questions);
+            // })
+            const wow = await Quiz.findOne({quizId: quizId, options: {$elemMatch: {questionId: quesId}}});
+            const ques = wow.options[i].questionId;
+            const answer = wow.options[i].correct_answer;
+            const wew = {
+                ques: answer
+            }
+            console.log(wew);
+        }
+        res.send("Wow")
+    // } else {
+    //     res.redirect('/login');
+    // }
 })
 
 app.get('/entersub', (req, res) => {
@@ -122,9 +166,6 @@ app.get('/entersub', (req, res) => {
 })
 
 
-// app.get('/viewres', (req, res) => {
-//     res.render('viewres');
-// })
 app.get('/play', (req, res) => {
     res.render('play');
 })
@@ -137,15 +178,21 @@ app.get('/logout', (req, res) => {
 //<% include views/forget.ejs %>
 //Test code
 app.post('/api/play', (req, res) => {
-    const data = req.body;
-    console.log(data.title);
-    console.log(data.options);
-    const quizFinal = new Quiz({
-        title: data.title,
-        options: data.options
-    })
-    quizFinal.save();
-    res.send('Quiz created successfully');
+    if (req.session.isAdmin) {
+        const data = req.body;
+        console.log(data.title);
+        console.log(data.options);
+        const quizFinal = new Quiz({
+            title: data.title,
+            options: data.options,
+            quizId: uuidv4()
+        })
+        quizFinal.save();
+        res.send('Quiz created successfully');
+        }
+    else {
+        res.redirect('/login')
+    }
 });
 
 
