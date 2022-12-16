@@ -14,6 +14,7 @@
         <%- include('header');%>
     </div>
 
+    <% if (data.length > 0) { %>
     <table class="table">
         <thead class="head">
             <tr>
@@ -24,41 +25,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td> <input type="text" placeholder="SUBJECT 1" class="input_field"></td>
-
-                <td><a href="">Take Quiz</a></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td> <input type="text" placeholder="SUBJECT 1" class="input_field"></td>
-
-                <td><a href="">Take Quiz</a></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td> <input type="text" placeholder="SUBJECT 1" class="input_field"></td>
-                <!-- <td>10/10/10</td>
-                    <td>00:00</td> -->
-                <td><a href="">Take Quiz</a></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td> <input type="text" placeholder="SUBJECT 1" class="input_field"></td>
-                <!-- <td>10/10/10</td>
-                    <td>00:00</td> -->
-                <td><a href="">Take Quiz</a></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td> <input type="text" placeholder="SUBJECT 1" class="input_field"></td>
-                <!-- <td>10/10/10</td>
-                    <td>00:00</td> -->
-                <td><a href="">Take Quiz</a></td>
-            </tr>
+                <% for(var i=0;i < data.length; i++) { %>
+                <tr>
+                    <td><%= i + 1 %></td>
+                    <td><p><%= data[i].title %></p></td>
+                    <td><a href="/quiz/<%= data[i].quizId %>">Take Quiz</a></td>
+                </tr>
+                <% } %>
         </tbody>
     </table>
+    <% } else { %>
+        <p>No quiz found!</p>
+    <% } %>
     <!-- </div> -->
     </div>
     <!-- </div> -->
