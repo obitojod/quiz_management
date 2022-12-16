@@ -113,21 +113,39 @@ app.get('/attemptquiz', (req, res) => {
     }
 })
 
-app.get('/entersub', (req, res) => {
+app.get('/createquiz', (req, res) => {
     if (req.session.isAdmin) {
-        res.render('entersub');
+        res.render('createquiz');
     } else {
         res.redirect('/student');
     }
 })
-
-
-// app.get('/viewres', (req, res) => {
-//     res.render('viewres');
-// })
-app.get('/play', (req, res) => {
-    res.render('play');
+app.get('/student', (req, res) => {
+    console.log(req.session.email);
+    console.log(req.session.isAdmin);
+    if (req.session.email) {
+        const email = req.session.email;
+        res.render('student', { user: email });
+    } else {
+        res.redirect('/login');
+    }
 })
+
+app.get('/viewquiz', (req, res) => {
+
+        if (req.session.email) {
+            const email = req.session.email;
+            res.render('viewquiz', { user: email });
+        } else {
+            res.redirect('/login');
+        }
+    })
+    // app.get('/viewres', (req, res) => {
+    //     res.render('viewres');
+    // })
+    // app.get('/play', (req, res) => {
+    //     res.render('play');
+    // })
 
 app.get('/logout', (req, res) => {
     req.session.destroy();
